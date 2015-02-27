@@ -1,0 +1,64 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="canvas">
+
+<header class="bk-header">
+    <div class="wrapper clearfix">
+        <div class="header-wrap">
+            <div class="responsivecolumns columns-three-33-34-33">
+                <div class="column columns-three-left">
+                    <div class="profile-spacing">
+                        {{widget('profile', 'headercolumn1profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+                    </div> 
+                </div>
+                <div class="column columns-three-middle">
+                    <div class="companyheader">
+                        {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+                        {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+
+                    </div>
+                </div>
+                <div class="column columns-three-right">
+                    <div class="profile-spacing">
+                        {{widget('profile', 'headercolumn3profileemail', { 'profileType':'email', 'email':'profile'})|raw}} 
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
+    </div>
+</header>
+
+<div class="wrapper">
+	{{widget('feature', 'featurehome', {"header": "profile", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+</div>
+
+<div class="main wrapper clearfix">
+    {{zone('main')|raw}}
+</div>
+
+<footer class="bk-footer wrapper">
+    <div class="responsivecolumns columns-three-33-34-33">
+        <div class="column columns-three-left">
+            <div class="profile-spacing">
+                {{widget('profile', 'footercolumn1profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+            </div>
+        </div>
+        <div class="column columns-three-middle">
+            <div class="companyheader">
+            {{widget('logo', 'footercolumn2logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            </div>
+        </div>
+        <div class="column columns-three-right">
+            <div class="profile-spacing">
+                {{widget('profile', 'footercolumn3profilecopyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}} 
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
+
+{% endblock %}

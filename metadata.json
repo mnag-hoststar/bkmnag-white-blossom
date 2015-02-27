@@ -1,0 +1,148 @@
+{
+	"name":"White Blossom",
+	"thumbnail":"whiteblosssom.png",
+	"screenshot":"whiteblosssom.png",
+	"templateType":"standard",
+    "pageTypes": ["home"],
+    "tags": {
+        "en": ["minimal", "Bright", "Floral", "modern", "colorful", "colourful", "stylish", "agency", "magazine", "creative", "elegant", "professional", "sophisticated", "wedding", "serif", "sans-serif"],
+        "es": ["minimalista", "Claro", "Decorativo", "moderno", "colorido", "estilo", "agencia", "revista", "creativo", "elegante", "profesional", "sofisticado", "boda", "serif", "sans-serif"],
+        "br": ["minimalista", "Claro", "Florido", "moderno", "colorido", "estilo", "agência", "revista", "criativo", "elegante", "profissional", "sofisticado", "casamento", "serif", "sans-serif"]
+    },
+	"colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#ffffff",
+            "color2":"#f9f9f9",
+            "color3":"#e7b6b0",
+            "color4":"#6c4841",
+            "color5":"#837a70",
+            "color6":"#837a70",
+            "color7":"#000000"
+        },
+        "Swatch 2": {
+            "color1":"#ffffff",
+            "color2":"#f9f9f9",
+            "color3":"#cdb0d1",
+            "color4":"#474048",
+            "color5":"#979198",
+            "color6":"#979198",
+            "color7":"#000000"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#f9f9f9",
+            "color3":"#9dcfbb",
+            "color4":"#404846",
+            "color5":"#919698",
+            "color6":"#919698",
+            "color7":"#000000"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#f9f9f9",
+            "color3":"#699fb5",
+            "color4":"#4a565b",
+            "color5":"#8e9498",
+            "color6":"#8e9498",
+            "color7":"#000000"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#f9f9f9",
+            "color3":"#cb9191",
+            "color4":"#5e5350",
+            "color5":"#918883",
+            "color6":"#918883",
+            "color7":"#000000"
+        }
+    },
+    "fontSwatch": {
+       "title": "Playfair Display, Roboto Light",
+        "font1": {
+            "font-family": "\"Roboto\", Helvetica, Arial, sans-serif",
+            "font-size": "42px",
+            "font-weight": "300",
+            "line-height": "46px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Playfair Display\", Georgia, serif",
+            "font-size": "24px",
+            "font-weight": "500",
+            "line-height": "36px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Playfair Display\", Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "inherit",
+            "line-height": "28px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Playfair Display\", Georgia, serif",
+            "font-size": "16px",
+            "font-weight": "inherit",
+            "line-height": "26px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Roboto\", Helvetica, Arial, sans-serif",
+            "font-size": "14px",
+            "font-weight": "300",
+            "line-height": "24px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Roboto\", Helvetica, Arial, sans-serif",
+            "font-size": "13px",
+            "font-weight": "inherit",
+            "line-height": "28px",
+            "color": "@color-swatch6",
+            "color-hover": "@color-swatch3",
+            "letter-spacing": "1px",
+            "background-color": "darken(@color-swatch1,3%)",
+            "background-color-hover": "darken(@color-swatch1,3%)"
+        },
+        "font7": {
+            "font-family": "\"Roboto\", Helvetica, Arial, sans-serif",
+            "font-size": "16px",
+            "font-weight": "inherit",
+            "line-height": "26px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3,8%)"
+        },
+        "font8": {
+            "font-family": "\"Playfair Display\", Georgia, serif",
+            "font-size": "46px",
+            "font-weight": "inherit",
+            "line-height": "50px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Playfair Display\", Georgia, serif",
+            "font-size": "16px",
+            "font-weight": "inherit",
+            "line-height": "28px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+         "font10": {
+            "font-family": "\"Playfair Display\", Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "inherit",
+            "line-height": "30px",
+            "color": "@color-swatch4",
+            "letter-spacing": "1px"
+        }
+    }
+}
