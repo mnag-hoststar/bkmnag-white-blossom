@@ -286,7 +286,8 @@ footer.bk-footer h2 {
    =============================== */
 
 .widget.feature .feature-bgimg {
-    height: 600px
+    height: 600px;
+    display: inherit;
 }
 
 .widget.feature .content {
@@ -313,9 +314,11 @@ footer.bk-footer h2 {
     color: @font-swatch8-color;
     letter-spacing: @font-swatch8-letter-spacing;
     text-shadow: 0px 1px 1px fade(@color-swatch1, 20%);
-    padding: 10px;
-    margin: 0 10%;
-    background-color: fade(@color-swatch1, 30%);
+    //margin: 0 10%;
+    span {
+        background-color: fade(@color-swatch1, 30%);
+        padding: 5px 20px 10px;
+    }
 }
 
 /* FEATURE STRAPLINE */
@@ -999,6 +1002,15 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
     .transition( opacity, 0.5s, ease );
     opacity: 1;
 }
+
+/* ===============================
+   Map widget
+   =============================== */
+
+.widget.map {
+    margin: 20px 0;
+}
+
 
 /* ===============================
    SLIDESHOW WIDGET
