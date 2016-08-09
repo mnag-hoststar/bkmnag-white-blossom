@@ -1,7 +1,7 @@
 {
 	"name":"White Blossom",
-	"thumbnail":"whiteblosssom.png",
-	"screenshot":"whiteblosssom.png",
+	"thumbnail":"thumbnail.png",
+	"screenshot":"whiteblossom-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
