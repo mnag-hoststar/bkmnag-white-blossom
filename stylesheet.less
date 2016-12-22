@@ -349,11 +349,10 @@ footer.bk-footer h2 {
    BUTTON CSS
    =============================== */
 
-.widget.button {
-    padding: 4px 0
-}
 
-.widget.button button {
+.widget.button button,
+.contactform button, .contactform button.btn, 
+.advancedcontactform button, .advancedcontactform button.btn {
     padding: 12px 18px;
     margin: 0;
     border: 0;
@@ -366,12 +365,10 @@ footer.bk-footer h2 {
     color: @font-swatch7-color;
     text-decoration: none;
     text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
-    
-}
-
-.widget.button button:hover {
-    background-color: @font-swatch7-background-color-hover;
-    cursor: pointer;
+    &:hover {
+      background-color: @font-swatch7-background-color-hover;
+      cursor: pointer;
+    }
 }
 
 
@@ -844,14 +841,24 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
     .transition(all, 0.5s, ease);
 }
 
+.form-group {
+  margin-bottom: 1em;
+}
+
+.contactform label, .advancedcontactform label {
+  font-family: @font-swatch5-font-family;
+  font-size: @font-swatch5-font-size;
+  font-weight: @font-swatch5-font-weight;
+  line-height: @font-swatch5-line-height;
+  color: @font-swatch5-color;
+  margin: 0 0 8px;
+  display: inline-block;
+}
+
 .widget {
     &.contactform {
         label {
-            font-family: @font-swatch3-font-family;
-            font-size: @font-swatch4-font-size;
-            font-weight: @font-swatch3-font-weight;
-            line-height: @font-swatch3-line-height;
-            margin: 16px 0 8px;
+            
         }
         input, textarea {
             border: 1px solid lighten(@color-swatch5, 12%);
@@ -863,9 +870,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
         }
         button.btn {
             padding: 0 24px;
-            margin-top: 10px;
             line-height: 40px;
-            text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
             @media @mobile {
                 width: 100%;
             }
