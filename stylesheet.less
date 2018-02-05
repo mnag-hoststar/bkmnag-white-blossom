@@ -299,6 +299,8 @@ footer.bk-footer h2 {
 /* FEATURE TITLE */
 
 .widget.feature h2 {
+    margin: 100px 10% 10px;
+    padding: 30px 40px;
     font-family: @font-swatch8-font-family;
     font-size: @font-swatch8-font-size;
     font-weight: @font-swatch8-font-weight;
@@ -306,9 +308,15 @@ footer.bk-footer h2 {
     color: @font-swatch8-color;
     letter-spacing: @font-swatch8-letter-spacing;
     text-shadow: 0px 1px 1px fade(@color-swatch1, 20%);
-    //margin: 0 10%;
+    background-color: fade(@color-swatch1, 30%);
+    @media @tablet {
+        margin: 30px 5% 10px;
+        padding: 20px 30px;
+    }
+    @media @mobile {
+        margin: 10px 5% 10px;
+    }
     span {
-        background-color: fade(@color-swatch1, 30%);
         padding: 5px 20px 10px;
     }
 }
