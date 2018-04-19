@@ -247,10 +247,6 @@ footer.bk-footer h2 {
     .language-selector & {
 	    box-sizing: content-box;
     	padding: @language-padding;
-        
-        @media @tablet {
-    	    width: auto;
-        }
     }
     
     .language-selector.language-selector--horizontal & {
@@ -468,6 +464,13 @@ footer.bk-footer h2 {
 
 .language-selector__name,
 .language-selector__localised-name {
+	.language-selector & {
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
+	}
+	
 	.language-selector & {
 		text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
 	}
