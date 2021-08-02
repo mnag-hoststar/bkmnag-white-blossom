@@ -1,0 +1,92 @@
+
+// -------------------------------------------
+//  Migration Styles -
+//
+//  These changes allow rows to work with
+//  existing templates in BK10
+// -------------------------------------------
+
+
+
+// Template styling resets
+// ------------------------------------
+
+#migrated {
+
+    .main {
+        padding: 0;
+    }
+}
+
+
+
+// Row improvments
+// ------------------------------------
+
+#migrated {
+    [data-rowtype="gallery-4a"] .widget.gallery .inner .image-data {
+        .align-items(center);
+        .flex-display;
+        .flex-direction(column);
+        .flex-wrap(wrap);
+        .justify-content(center);
+        text-align: center;
+    }
+
+    [data-rowtype="gallery-4a"] .widget.gallery .inner .image-data .title {
+        margin: 0 0 15px;
+    }
+
+    .row--layout-hero-5a .signupform fieldset {
+        input {
+            width: auto;
+        }
+        button {
+            padding: 0 12px;
+            width: auto;
+
+            @media @mobile {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+
+// Re-add the reset styles
+// ------------------------------------
+
+#migrated {
+
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    [data-name="row"] .row:not(.row--width-no-padding) .row__container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    // Move spacing to first widget in the main zone (not sections)
+    .edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 5%;
+    }
+
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 5%;
+    }
+
+    // Add spacing to the top of a widget when it follows a section
+    #page-zones__main > .row + .widget:not([data-name="row"]) {
+        margin-top: 20px;
+    }
+
+    // Empy zone spacing
+    &.edit #page-zones__main:empty {
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+}

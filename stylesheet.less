@@ -9,7 +9,7 @@ body {
     background-image: image("/images/bg.png");
     background-repeat: repeat;
     margin: 0;
-    padding: 0;
+    padding: 50px 0;
 }
 
 .wrapper {
@@ -29,7 +29,7 @@ body {
     background-color: @color-swatch1;
     max-width: 1280px;
     width: 90%;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 0px;
     box-shadow: 0 0 20px rgba(110, 110, 110, 0.1);
 
@@ -51,6 +51,25 @@ body.edit .widget.extendednavigation {
     transition: @prop @time @ease;
 }
 
+h1, h2, h3, h4, h5, h6,
+[class*="contentgroup__h"],
+.blog-post-item .blog-post-title a,
+.contactform label, .advancedcontactform label,
+a,
+[data-name="content"] a:not(.contentgroup__link) {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
 h5 {
     font-family: @font-swatch4-font-family;
     font-size: @font-swatch5-font-size;
@@ -60,12 +79,65 @@ h5 {
     letter-spacing: @font-swatch4-letter-spacing;
 }
 
+p,
+ul, ol, li,
+label,
+.contentgroup__body,
+.contactform label, 
+.advancedcontactform label,
+.widget.twitter .twitter-content p,
+.widget.twitter .twitter-content p a,
+.widget.twitter .twitter-content p a:hover,
+.twitter ul > li a:hover,
+.signupform label,
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select,
+select,
+blockquote,
+blockquote:before {
+    font-family:@font-swatch5-font-family;
+    font-weight: @font-swatch5-font-weight;
+    color:@font-swatch5-color;
+    line-height:@font-swatch5-line-height;
+    letter-spacing: @font-swatch5-letter-spacing;
+    font-size: @font-swatch5-font-size;
+
+    .style--light & {
+        color: fade(@contrast--light, 75%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 75%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 75%);
+    }
+}
+
 blockquote {
     background-color: @color-swatch1;
     font-family: @font-swatch2-font-family;
     color: @font-swatch2-color;
     font-style: italic;
     padding: 0;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: transparent;
+    }
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
     
     &:before {
         display: none;
@@ -140,7 +212,6 @@ footer {
             padding: 0;
             width: auto;
         }
-        
         
         .widget.profile:not(.bk-tpl-hidden) + .companyheader {
             flex: none;
@@ -759,15 +830,10 @@ footer {
     font-family: @font-swatch7-font-family;
     font-size: @font-swatch7-font-size;
     font-weight: @font-swatch7-font-weight;
-    background-color: @font-swatch7-background-color;
     line-height: @font-swatch7-line-height;
     letter-spacing: @font-swatch7-letter-spacing;
-    color: @font-swatch7-color;
-    text-decoration: none;
-    text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
     
     &:hover {
-        background-color: @font-swatch7-background-color-hover;
         cursor: pointer;
     }
 }
@@ -784,10 +850,6 @@ footer {
     p {
         color: @color-swatch4;
         padding: 0;
-    }
-    
-    li {
-        border-bottom: darken(@color-swatch1, 10%);
     }
     
     ul li a:hover {
@@ -823,6 +885,18 @@ footer {
             font-family: @font-swatch4-font-family;
             font-size: @font-swatch4-font-size;
             line-height: @font-swatch4-line-height;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
         }
         
         // Tweet Link
@@ -832,21 +906,28 @@ footer {
             font-size: @font-swatch5-font-size;
             line-height: @font-swatch5-line-height;
             text-decoration: none;
-            
-            &:hover {
-                color: darken(@color-swatch5, 10%);
-            }
         }
         
         a:hover span.bk-full-name {
             color: @font-swatch4-color;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
         }
         
         span a {
             text-decoration: none;
             
             &:hover {
-                color: @color-swatch2;
                 text-decoration: none;
             }
         }
@@ -872,13 +953,59 @@ footer {
             font-size: 13px;
             color: @color-swatch3;
             font-weight: inherit;
+
+            .style--light & {
+                color: @color--accent;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
             
             &:hover {
                 color: darken(@color-swatch3, 15%);
+
+                .style--light & {
+                    color: darken(@color--accent, 15%);
+                }
+
+                .style--accent & {
+                    color: darken(@contrast--accent, 15%);
+                }
+
+                .style--dark & {
+                    color: darken(@contrast--dark, 15%);
+                }
             }
         }
     }
 }
+
+
+
+/* ===============================
+   Line widget
+   =============================== */
+
+hr.line {
+    .style--light & {
+        background-color: darken(@color--light, 15%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 15%);
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--dark, 15%);
+    }
+}
+
+
 
 /* ===============================
    Ecommerce
@@ -983,6 +1110,14 @@ select {
     transition: border 0.2s;
     border-radius: 0;
     height: 45px;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: @color--light;
+        border-color: fade(@contrast--light, 88%);
+        color: @contrast--light;
+    }
 }
 
 .productlist-item-count {
@@ -1150,23 +1285,12 @@ select {
 .svg .widget.tweet a {
     background-image: image("/images/social/socialicons-twitter.svg");
     background-size: 22px;
-    background-color: @font-swatch7-background-color;
     background-position: 18px center;
     background-repeat: no-repeat;
     padding: 12px 24px 12px 48px;
     margin: 1em 0;
-    border: 0;
-    font-family: @font-swatch7-font-family;
-    font-size: @font-swatch7-font-size;
-    font-weight: @font-swatch7-font-weight;
-    line-height: @font-swatch7-line-height;
-    letter-spacing: @font-swatch7-letter-spacing;
-    color: @font-swatch7-color;
-    text-decoration: none;
-    text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
     
     &:hover {
-        background-color: @font-swatch7-background-color-hover;
         cursor: pointer;
     }
 }
@@ -1175,7 +1299,6 @@ select {
     background-image: image("/images/social/socialicons-twitter.png");
     
     &:hover {
-        background-color: @font-swatch7-background-color-hover;
         cursor: pointer;
     }
 }
@@ -1235,6 +1358,14 @@ textarea {
     -webkit-border-radius: 0;
     border-radius: 0;
     padding: 12px;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        background-color: @color--light;
+        border-color: fade(@contrast--light, 88%);
+        color: @contrast--light;
+    }
     
     @media @mobile {
         font-size: bkscale(@font-swatch5-font-size, 0.9);
@@ -1244,6 +1375,12 @@ textarea {
     &:focus {
         border: 1px solid lighten(@color-swatch5, 3%) !important;
         transition: ease 0.5s border !important;
+
+        .style--light &,
+        .style--accent &,
+        .style--dark & {
+            border-color: fade(@contrast--light, 97%) !important;
+        }
     }
 }
 
@@ -1252,6 +1389,44 @@ input {
         width: 100%;
     }
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: @color-swatch5;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:   @color-swatch5;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    @color-swatch5;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    @color-swatch5;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
+}
+
 
 .ecom-product-go-to-checkout-btn {
     font-family: @font-swatch7-font-family;
@@ -1268,16 +1443,68 @@ input {
     }
 }
 
-button:hover,
-button.btn:hover,
-.widget.tweet a:hover,
-.widget.button.paypal:hover,
-.widget.blogsearch button:hover,
-.widget.ecomproduct .ecom-product .btn:hover,
-.widget.ecombasket .ecombasket-pull:hover,
-.widget.clicktocall a:hover {
-    background-color: @font-swatch7-background-color-hover;
-    .transition(all, 0.5s, ease);
+button.btn,
+.widget.button button,
+.widget.tweet a,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.dropbox button,
+.widget.blogsearch button,
+.widget.signupform button,
+.widget.contactform button,
+.widget.contactform button.btn,
+.widget.advancedcontactform button,
+.widget.advancedcontactform button.btn,
+.widget.ecomproduct .ecom-product .btn,
+.widget.ecombasket .ecombasket-pull,
+.widget.paypalbuynow button,
+.widget.tweet a,
+.widget.socialicons span a,
+a.contentgroup__link {
+    background-color: @font-swatch7-background-color;
+    border: 0;
+    color: @font-swatch7-color;
+    font-family: @font-swatch7-font-family;
+    font-size: @font-swatch7-font-size;
+    font-weight: @font-swatch7-font-weight;
+    line-height: @font-swatch7-line-height;
+    letter-spacing: @font-swatch7-letter-spacing;
+    text-decoration: none;
+    text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
+
+    .style--light & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0 1px 1px fade(@color--accent, 20%);
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+        text-shadow: 0 1px 1px fade(@color--dark, 20%);
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+        text-shadow: 0 1px 1px fade(@color--accent, 20%);
+    }
+
+    &:hover {
+        background-color: @font-swatch7-background-color-hover;
+        .transition(all, 0.5s, ease);
+
+        .style--light & {
+            background-color: darken(@color--accent, 10%);
+        }
+
+        .style--accent & {
+            background-color: darken(@color--dark, 10%);
+        }
+
+        .style--dark & {
+            background-color: darken(@color--accent, 10%);
+        }
+    }
 }
 
 input,
@@ -1340,8 +1567,6 @@ button.blog-search-submit-button,
     &.contactform {
         input,
         textarea {
-            border: 1px solid lighten(@color-swatch5, 12%);
-            
             &.email {
                 @media @mobile {
                     width: 100%;
@@ -1397,7 +1622,6 @@ button.blog-search-submit-button,
             }
         }
         input {
-            border: 1px solid lighten(@color-swatch5, 12%);
             height: 45px;
             width: 79%;
             
@@ -1413,7 +1637,6 @@ button.blog-search-submit-button,
     &.blogsearch {
         margin: 10px 0;
         input {
-            border: 1px solid lighten(@color-swatch5, 12%);
             width: 79%;
             
             @media @mobile {
@@ -1421,22 +1644,12 @@ button.blog-search-submit-button,
             }
         }
         button {
-            background-color: @font-swatch7-background-color;
-            border: 0;
-            font-family: @font-swatch7-font-family;
-            font-size: @font-swatch7-font-size;
-            font-weight: @font-swatch7-font-weight;
-            color: @font-swatch7-color;
             letter-spacing: inherit;
             padding: 0 12px;
             text-decoration: none;
             position: relative;
             width: 20%;
             vertical-align: top;
-            
-            &:hover {
-                background-color: @font-swatch7-background-color-hover;
-            }
             
             @media @mobile {
                 margin-top: 10px;
@@ -1447,10 +1660,6 @@ button.blog-search-submit-button,
     &.button {
         button.btn {
             padding: 0 24px;
-            
-            &:hover {
-                background-color: @font-swatch7-background-color-hover;
-            }
         }
     }
 }
@@ -1643,10 +1852,34 @@ button.blog-search-submit-button,
             width: 10px;
             height: 10px;
             margin: 5px;
+
+            .style--light & {
+                background-color: lighten(@contrast--light, 10%);
+            }
+
+            .style--accent & {
+                background-color: darken(@contrast--accent, 10%);
+            }
+
+            .style--dark & {
+                background-color: darken(@contrast--dark, 10%);
+            }
             
             &.selected {
                 background-color: @color-swatch3;
                 border: 0;
+
+                .style--light & {
+                    background-color: @color--accent;
+                }
+
+                .style--accent & {
+                    background-color: @contrast--accent;
+                }
+
+                .style--dark & {
+                    background-color: @color--accent;
+                }
             }
         }
     }
@@ -1736,7 +1969,6 @@ button.blog-search-submit-button,
             font-size: @font-swatch4-font-size;
             font-weight: @font-swatch4-font-weight;
             line-height: @font-swatch4-line-height;
-            color: @font-swatch4-color;
             letter-spacing: @font-swatch4-letter-spacing;
         }
     }
@@ -1829,9 +2061,12 @@ button.blog-search-submit-button,
    =============================== */
 
 @media only screen and (max-width: 768px) {
+    body {
+        padding: 30px 0;
+    }
+
     .canvas {
         z-index: 100;
-        margin: 30px auto;
     }
 
     header.bk-header {
@@ -2029,7 +2264,44 @@ button.blog-search-submit-button,
     }
 
     .widget.clicktocall a {
+       background-color: @font-swatch7-background-color;
+        color: @font-swatch7-color;
         text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
+
+        .style--light & {
+            background-color: @color--accent;
+            color: @contrast--accent;
+            text-shadow: 0 1px 1px fade(@color--accent, 20%);
+        }
+
+        .style--accent & {
+            background-color: @color--dark;
+            color: @contrast--dark;
+            text-shadow: 0 1px 1px fade(@color--dark, 20%);
+        }
+
+        .style--dark & {
+            background-color: @color--accent;
+            color: @contrast--accent;
+            text-shadow: 0 1px 1px fade(@color--accent, 20%);
+        }
+
+        &:hover {
+            background-color: @font-swatch7-background-color-hover;
+            .transition(all, 0.5s, ease);
+
+            .style--light & {
+                background-color: darken(@color--accent, 10%);
+            }
+
+            .style--accent & {
+                background-color: darken(@color--dark, 10%);
+            }
+
+            .style--dark & {
+                background-color: darken(@color--accent, 10%);
+            }
+        }
     }
 
     h1 {

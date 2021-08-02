@@ -3,6 +3,7 @@
 	"thumbnail":"thumbnail.png",
 	"screenshot":"whiteblossom-screenshot.jpg",
 	"templateType":"standard",
+    "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
         "en": ["minimal", "Bright", "Floral", "modern", "colorful", "colourful", "stylish", "agency", "magazine", "creative", "elegant", "professional", "sophisticated", "wedding", "serif", "sans-serif"],
@@ -14,11 +15,11 @@
         "Swatch 1": {
             "color1":"#ffffff",
             "color2":"#f9f9f9",
-            "color3":"#e7b6b0",
+            "color3":"#df9a92",
             "color4":"#6c4841",
             "color5":"#837a70",
             "color6":"#837a70",
-            "color7":"#000000"
+            "color7":"#6c4841"
         },
         "Swatch 2": {
             "color1":"#ffffff",
