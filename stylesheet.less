@@ -67,6 +67,8 @@ h1, h2, h3, h4, h5, h6,
 .contactform label, .advancedcontactform label,
 a,
 [data-name="content"] a:not(.contentgroup__link) {
+    word-break: break-word;
+
     .style--light & {
         color: @contrast--light;
     }
@@ -110,6 +112,7 @@ blockquote:before {
     line-height:@font-swatch5-line-height;
     letter-spacing: @font-swatch5-letter-spacing;
     font-size: @font-swatch5-font-size;
+    word-break: break-word;
 
     .style--light & {
         color: fade(@contrast--light, 75%);
@@ -1458,6 +1461,16 @@ select {
 
 	&::-ms-expand {
 		display: none;
+	}
+}
+
+.contactform .option-item--radio,
+.contactform .option-item--checkbox,
+.advancedcontactform .option-item--radio,
+.advancedcontactform .option-item--checkbox {
+	label {
+		label;
+		word-break: break-word;
 	}
 }
 
