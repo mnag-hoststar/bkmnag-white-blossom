@@ -1,6 +1,16 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
 /* ===============================
+    Mixins
+    ============================== */
+
+.appearance(@appearance: none) {
+    -webkit-appearance: @appearance;
+    -moz-appearance: @appearance;
+    appearance: @appearance;
+}
+
+/* ===============================
    TEMPLATE STYLES
    =============================== */
 
@@ -1011,6 +1021,80 @@ hr.line {
    Ecommerce
    =============================== */
 
+.widget.ecomproductslist {
+    margin-top: 40px;
+
+    .productlist-filter .productlist-display-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        margin: 0 -5px;
+
+        @media @mobile {
+            display: block;
+        }
+
+        .form-group {
+            width: 100%/3;
+            margin: 0 0 1.5em;
+            padding: 0 10px 10px;
+            box-sizing: border-box;
+
+            @media @mobile {
+                margin: 0;
+                padding: 0 0 10px;
+                width: 100%;
+            }
+
+            label {
+                width: 100%;
+
+                &:after {
+                    content: ":";
+                    display: inline-block;
+                    position: relative;
+                }
+            }
+
+            select {
+                width: 100%;
+            }
+
+            button {
+                position: relative;
+                vertical-align: top;
+            }
+
+            &.productlist-search {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+
+                input#productlist-search,
+                button.btn {
+                    height: 45px;
+                }
+
+                input#productlist-search {
+                    flex-grow: 1;
+                    margin-right: 10px;
+
+                    @media @mobile {
+                        margin-right: 0;
+                        width: 100%;
+                    }
+                }
+            
+                button {
+                    @media @mobile {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .productlist-filter {
     margin: 0 auto;
     
@@ -1021,14 +1105,6 @@ hr.line {
         label {
             display: block;
             padding-bottom: 0.4em;
-        }
-        
-        select {
-            width: auto;
-            
-            @media @tablet {
-                width: 100%;
-            }
         }
         
         button.btn {
@@ -1043,8 +1119,8 @@ hr.line {
 }
 
 .widget.ecomproductslist .productlist-filter .productlist-display-form .form-group {
-    padding: 10px 5px 10px 0;
-    margin: 0 5px 0 0;
+    padding: 10px 5px;
+    margin: 0;
 }
 
 .productlist-display-form .form-group {
@@ -1091,32 +1167,6 @@ hr.line {
     
     &:hover {
         text-decoration: none;
-    }
-}
-
-select {
-    background-color: transparent;
-    border: 1px solid lighten(@color-swatch5, 12%);
-    color: @font-swatch5-color;
-    line-height: 20px;
-    font-size: 13px;
-    text-indent: 0;
-    width: 100%;
-    padding: 8px 10px 10px;
-    outline: none;
-    -webkit-transition: border 0.2s;
-    -moz-transition: border 0.2s;
-    -ms-transition: border 0.2s;
-    transition: border 0.2s;
-    border-radius: 0;
-    height: 45px;
-
-    .style--light &,
-    .style--accent &,
-    .style--dark & {
-        background-color: @color--light;
-        border-color: fade(@contrast--light, 88%);
-        color: @contrast--light;
     }
 }
 
@@ -1351,13 +1401,16 @@ select {
 /* Forms */
 
 input,
-textarea {
+textarea,
+select {
     background-color: @color-swatch1;
     border: 1px solid lighten(@color-swatch5, 12%);
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
-    padding: 12px;
+    padding: 0 12px;
+    height: 45px;
+    line-height: 45px;
 
     .style--light &,
     .style--accent &,
@@ -1388,6 +1441,24 @@ input {
     @media @mobile {
         width: 100%;
     }
+}
+
+textarea {
+    height: auto;
+}
+
+select {
+	padding-right: 2.2em;
+    width: 100%;
+    .appearance(none) !important;
+	background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: right 0.5em center;
+    background-size: 1.2em;
+
+	&::-ms-expand {
+		display: none;
+	}
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -1505,17 +1576,6 @@ a.contentgroup__link {
             background-color: darken(@color--accent, 10%);
         }
     }
-}
-
-input,
-.widget.profile form fieldset input,
-.widget.tweet a,
-.widget.ecombasket .ecombasket-pull,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn,
-button {
-    line-height: 45px;
-    height: 45px;
 }
 
 .widget.paypalbuynow .widget.button.paypal,
