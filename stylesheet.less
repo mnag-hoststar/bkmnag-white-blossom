@@ -1,8 +1,6 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
-/* ===============================
-    Mixins
-    ============================== */
+// Mixins
 
 .appearance(@appearance: none) {
     -webkit-appearance: @appearance;
@@ -10,9 +8,7 @@
     appearance: @appearance;
 }
 
-/* ===============================
-   TEMPLATE STYLES
-   =============================== */
+// TEMPLATE STYLES
 
 body {
     background-color: @color-swatch3;
@@ -26,9 +22,7 @@ body {
     width: 100%;
 }
 
-/* ===============================
-   CUSTOM CSS
-   =============================== */
+// CUSTOM CSS
 
 .main {
     padding: 5%;
@@ -164,9 +158,7 @@ blockquote {
     }
 }
 
-/* ===============================
-   HEADER and FOOTER
-   =============================== */
+// HEADER and FOOTER
    
 header.bk-header {
     padding: 0px;
@@ -272,9 +264,7 @@ footer {
 }
     
 
-/* ===============================
-   LANGUAGE SELECTOR
-   =============================== */
+// LANGUAGE SELECTOR
 
 @language-padding: 0.5em;
 @language-line-height: @font-swatch7-line-height;
@@ -304,6 +294,7 @@ footer {
             box-shadow: none;
         }
     }
+
     &.language-selector--dark {
         background-color: @font-swatch7-background-color;
         box-shadow: 0 0 20px rgba(110, 110, 110, 0.2);
@@ -351,6 +342,7 @@ footer {
             display: block;
             height: @language-line-height;
         }
+
         &:after {
             content: "";
             display: block;
@@ -418,19 +410,13 @@ footer {
             background-color: @font-swatch7-background-color;
 
             &:hover {
-                background-color: darken(
-                    @font-swatch7-background-color-hover,
-                    10%
-                );
+                background-color: darken(@font-swatch7-background-color-hover, 10%);
             }
 
             &--current {
                 &,
                 &:hover {
-                    background-color: darken(
-                        @font-swatch7-background-color-hover,
-                        10%
-                    );
+                    background-color: darken(@font-swatch7-background-color-hover, 10%);
                 }
             }
         }
@@ -439,19 +425,13 @@ footer {
             background-color: darken(@font-swatch7-background-color, 5%);
 
             &:hover {
-                background-color: darken(
-                    @font-swatch7-background-color-hover,
-                    5%
-                );
+                background-color: darken(@font-swatch7-background-color-hover, 5%);
             }
 
             &--current {
                 &,
                 &:hover {
-                    background-color: darken(
-                        @font-swatch7-background-color-hover,
-                        5%
-                    );
+                    background-color: darken(@font-swatch7-background-color-hover, 5%);
                 }
             }
         }
@@ -464,10 +444,7 @@ footer {
                 background-color: @font-swatch7-background-color;
 
                 &:hover {
-                    background-color: darken(
-                        @font-swatch7-background-color-hover,
-                        10%
-                    );
+                    background-color: darken(@font-swatch7-background-color-hover, 10%);
                 }
             }
         }
@@ -478,10 +455,7 @@ footer {
                 background-color: darken(@font-swatch7-background-color, 5%);
 
                 &:hover {
-                    background-color: darken(
-                        @font-swatch7-background-color-hover,
-                        5%
-                    );
+                    background-color: darken(@font-swatch7-background-color-hover, 5%);
                 }
             }
         }
@@ -550,13 +524,9 @@ footer {
     // Link Color
 
     .language-selector.language-selector--horizontal &,
-    .language-selector.language-selector--horizontal
-        .language-selector__item--current
-        &,
+    .language-selector.language-selector--horizontal .language-selector__item--current &,
     .language-selector.language-selector--dropdown &,
-    .language-selector.language-selector--dropdown
-        .language-selector__item--current
-        & {
+    .language-selector.language-selector--dropdown .language-selector__item--current & {
         .language-selector--light&,
         .language-selector--dark& {
             &,
@@ -582,8 +552,7 @@ footer {
         margin: 0;
     }
     
-    .language-selector.language-selector--dropdown.language-selector--flag-text
-        & {
+    .language-selector.language-selector--dropdown.language-selector--flag-text & {
         float: left;
         box-sizing: border-box;
         line-height: @language-line-height;
@@ -633,9 +602,7 @@ footer {
     }
 }
 
-/* ===============================
-   EXTENDED NAVIGATION
-   =============================== */
+// EXTENDED NAVIGATION
 
 .widget {
     &.extendednavigation {
@@ -644,6 +611,7 @@ footer {
         
         ul {
             width: 100%;
+
             @media @tablet {
                 padding-top: 0;
                 margin-top: 20px;
@@ -742,9 +710,7 @@ footer {
     color: @color-swatch3;
 }
 
-/* ===============================
-   FEATURE
-   =============================== */
+// FEATURE
 
 .widget.feature .feature-bgimg {
     height: 600px;
@@ -828,9 +794,7 @@ footer {
     cursor: pointer;
 }
 
-/* ===============================
-   BUTTON CSS
-   =============================== */
+// BUTTON CSS
 
 .widget.button button,
 .contactform button,
@@ -851,9 +815,7 @@ footer {
     }
 }
 
-/* ===============================
-   TWITTER WIDGET
-   =============================== */
+// TWITTER WIDGET
 
 .widget.twitter {
     img {
@@ -1000,9 +962,7 @@ footer {
 
 
 
-/* ===============================
-   Line widget
-   =============================== */
+// Line widget
 
 hr.line {
     .style--light & {
@@ -1020,9 +980,7 @@ hr.line {
 
 
 
-/* ===============================
-   Ecommerce
-   =============================== */
+// Ecommerce
 
 .widget.ecomproductslist {
     margin-top: 40px;
@@ -1312,7 +1270,6 @@ hr.line {
             display: inline-block;
             font-size: @font-swatch4-font-size;
             font-weight: 500;
-            //line-height: bkscale(@font-swatch5-line-height, 1.1);
             padding: 20px 15px;
         }
     }
@@ -1327,9 +1284,7 @@ hr.line {
     font-weight: @font-swatch7-font-weight;
 }
 
-/* ===============================
-   TWEET THIS WIDGET
-   =============================== */
+// TWEET THIS WIDGET
 
 .widget.tweet {
     padding: 14px 0;
@@ -1361,9 +1316,7 @@ hr.line {
     cursor: pointer;
 }
 
-/* ===============================
-   PROFILE WIDGET
-   =============================== */
+// PROFILE WIDGET
 
 .widget.profile span,
 .widget.profile a {
@@ -1651,12 +1604,14 @@ button.blog-search-submit-button,
                 }
             }
         }
+
         button.btn {
             @media @mobile {
                 width: 100%;
             }
         }
     }
+
     &.profile {
         form {
             button {
@@ -1673,6 +1628,7 @@ button.blog-search-submit-button,
                     width: 100%;
                 }
             }
+
             fieldset input {
                 background: transparent;
                 border: 1px solid lighten(@color-swatch5, 12%);
@@ -1684,6 +1640,7 @@ button.blog-search-submit-button,
             }
         }
     }
+
     &.signupform fieldset {
         button {
             width: 20%;
@@ -1699,6 +1656,7 @@ button.blog-search-submit-button,
                 width: 100%;
             }
         }
+
         input {
             height: 45px;
             width: 79%;
@@ -1712,8 +1670,10 @@ button.blog-search-submit-button,
             }
         }
     }
+
     &.blogsearch {
         margin: 10px 0;
+
         input {
             width: 79%;
             
@@ -1721,6 +1681,7 @@ button.blog-search-submit-button,
                 width: 100%;
             }
         }
+
         button {
             letter-spacing: inherit;
             padding: 0 12px;
@@ -1735,6 +1696,7 @@ button.blog-search-submit-button,
             }
         }
     }
+
     &.button {
         button.btn {
             padding: 0 24px;
@@ -1778,9 +1740,7 @@ button.blog-search-submit-button,
     }
 }
 
-/* ===============================
-   Gallery
-   =============================== */
+// Gallery
 
 .widget.gallery ul li span.inner {
     text-align: center;
@@ -1815,17 +1775,13 @@ button.blog-search-submit-button,
     opacity: 1;
 }
 
-/* ===============================
-   Map widget
-   =============================== */
+// Map widget
 
 .widget.map {
     margin: 20px 0;
 }
 
-/* ===============================
-   SLIDESHOW WIDGET
-   =============================== */
+// SLIDESHOW WIDGET
 
 .widget.responsiveslideshow {
     .slideshow-image-list,
@@ -1924,7 +1880,7 @@ button.blog-search-submit-button,
             }
         }
     }
-    /* Slideshow Controls */
+    
     .slideshow-widget-controls {
         .dot {
             width: 10px;
@@ -1963,9 +1919,7 @@ button.blog-search-submit-button,
     }
 }
 
-/* ===============================
-   BLOG
-   =============================== */
+// BLOG
 
 .widget {
     &.blogpostlist {
@@ -2038,6 +1992,7 @@ button.blog-search-submit-button,
 }
 
 /* BLOG SEARCH */
+
 .blogsearch {
     form {
         label {
@@ -2052,9 +2007,7 @@ button.blog-search-submit-button,
     }
 }
 
-/* ===============================
-   MENU
-   =============================== */
+// MENU
 
 .widget {
     &.menu {
@@ -2110,6 +2063,7 @@ button.blog-search-submit-button,
                 padding: 0;
             }
         }
+
         .menu-section-item-dietary-props {
             .dietary-icon {
                 background-color: @color-swatch3;
@@ -2134,9 +2088,10 @@ button.blog-search-submit-button,
     }
 }
 
-/* ===============================
-   IPAD WIDTH
-   =============================== */
+// FOOTER
+
+
+// IPAD WIDTH
 
 @media only screen and (max-width: 768px) {
     body {
@@ -2288,15 +2243,14 @@ button.blog-search-submit-button,
         font-size: @font-swatch7-font-size;
         padding: 12px 18px;
         margin-top: 10px;
+
         span {
             vertical-align: inherit;
         }
     }
 }
 
-/* ===============================
-   IPHONE WIDTH
-   =============================== */
+// IPHONE WIDTH
 
 @media only screen and (max-width: 480px) {
     body {
@@ -2342,7 +2296,7 @@ button.blog-search-submit-button,
     }
 
     .widget.clicktocall a {
-       background-color: @font-swatch7-background-color;
+        background-color: @font-swatch7-background-color;
         color: @font-swatch7-color;
         text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
 
@@ -2409,6 +2363,7 @@ button.blog-search-submit-button,
         button {
             left: 0;
             width: 100%;
+            
             &.btn {
                 margin-top: 25px;
             }
