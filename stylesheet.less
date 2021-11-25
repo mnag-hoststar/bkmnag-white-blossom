@@ -2085,6 +2085,28 @@ button.blog-search-submit-button,
 
 // FOOTER
 
+footer.bk-footer {
+    text-align: center;
+
+    @media @mobile {
+        margin-top: 0;
+        padding: 1em 5%;
+    }
+
+    .widget.profile {
+        form fieldset input {
+            width: 100%;
+        }
+
+        form button {
+            word-break: break-word;
+            height: auto;
+            width: auto;
+            margin: 10px 0;
+            line-height: 1.25em;
+        }
+    }
+}
 
 // IPAD WIDTH
 
@@ -2277,17 +2299,6 @@ button.blog-search-submit-button,
 
     .widget.feature button {
         margin: 1.5em 0 0;
-    }
-
-    /* FOOTER */
-
-    footer.bk-footer {
-        margin-top: 0;
-        padding: 1em 0;
-        
-        .widget.profile span {
-            text-align: center;
-        }
     }
 
     .widget.clicktocall a {
