@@ -1529,6 +1529,8 @@ a.contentgroup__link {
     letter-spacing: @font-swatch7-letter-spacing;
     text-decoration: none;
     text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
+    padding: 8px 14px;
+    min-height: 45px;
 
     .style--light & {
         background-color: @color--accent;
@@ -1598,6 +1600,9 @@ button.blog-search-submit-button,
 
 .form-group {
     margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .contactform label,
@@ -1730,7 +1735,6 @@ button.blog-search-submit-button,
         opacity: 1;
         margin: 4px 8px 4px 4px;
         padding: 0;
-        min-height: auto;
         min-width: auto;
         height: auto !important;
         width: auto !important;
@@ -1738,6 +1742,7 @@ button.blog-search-submit-button,
         -webkit-appearance: checkbox;
         -moz-appearance: checkbox;
         appearance: checkbox;
+        min-height: 45px;
     }
 
     label {
