@@ -978,136 +978,175 @@ hr.line {
 // Ecommerce
 
 .widget.ecomproductslist {
-    margin-top: 40px;
-
-    .productlist-filter .productlist-display-form {
+    .ecom-productslist-products {
         display: flex;
         flex-wrap: wrap;
-        justify-content: stretch;
-        margin: 0 -5px;
-
+        margin: 0 -10px;
+        max-width: none;
+    
         @media @mobile {
+            margin: 0;
             display: block;
         }
+    
+        .responsivecolumns & {
+            margin: 0;
+            display: block;
+        }
+    }
 
-        .form-group {
-            width: 100%/3;
-            margin: 0 0 1.5em;
-            padding: 0 10px 10px;
-            box-sizing: border-box;
+    .productlist-filter {
+        width: 100%;
+        margin-left: 0;
+
+        .productlist-display-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: stretch;
+            margin: 0 0 30px;
+    
+            @media @mobile {
+                display: block;
+            }
+    
+            .responsivecolumns & {
+                display: block;
+            }
+    
+            .form-group {
+                display: block;
+                width: 100%/3;
+                margin: 0;
+                padding: 0 10px 10px;
+                box-sizing: border-box;
+    
+                @media @mobile {
+                    margin: 0;
+                    padding: 0 0 10px;
+                    width: 100%;
+                }
+    
+                .responsivecolumns & {
+                    margin: 0;
+                    padding: 0 0 10px;
+                    width: 100%;
+                }
+    
+                label {
+                    width: 100%;
+                    padding: 10px 0 5px;
+    
+                    &:after {
+                        content: ":";
+                        display: inline-block;
+                        position: relative;
+                    }
+                }
+    
+                select {
+                    width: 100%;
+                }
+    
+                button {
+                    position: relative;
+                    vertical-align: top;
+                }
+    
+                &.productlist-search {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+    
+                    input#productlist-search,
+                    button.btn {
+                        height: 45px;
+                    }
+    
+                    input#productlist-search {
+                        flex-grow: 1;
+                        margin-right: 10px;
+    
+                        @media @mobile {
+                            margin-right: 0;
+                            width: 100%;
+                        }
+    
+                        .responsivecolumns & {
+                            margin-right: 0;
+                            width: 100%;
+                        }
+                    }
+                
+                    button.btn {
+                        @media @mobile {
+                            width: 100%;
+                            margin-top: 10px;
+                            position: static;
+                        }
+    
+                        .responsivecolumns & {
+                            width: 100%;
+                            margin-top: 10px;
+                            position: static;
+                        }
+                    }
+                }
+            }
+        }
+
+        .productlist-item-count {
+            padding: 0 10px 30px;
 
             @media @mobile {
-                margin: 0;
-                padding: 0 0 10px;
-                width: 100%;
+                padding: 0 0 30px;
             }
 
-            label {
-                width: 100%;
-
-                &:after {
-                    content: ":";
-                    display: inline-block;
-                    position: relative;
-                }
-            }
-
-            select {
-                width: 100%;
-            }
-
-            button {
-                position: relative;
-                vertical-align: top;
-            }
-
-            &.productlist-search {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-
-                input#productlist-search,
-                button.btn {
-                    height: 45px;
-                }
-
-                input#productlist-search {
-                    flex-grow: 1;
-                    margin-right: 10px;
-
-                    @media @mobile {
-                        margin-right: 0;
-                        width: 100%;
-                    }
-                }
-            
-                button {
-                    @media @mobile {
-                        width: 100%;
-                    }
-                }
+            .responsivecolumns & {
+                padding: 0 0 30px;
             }
         }
     }
-}
 
-.productlist-filter {
-    margin: 0 auto;
-    
-    .form-group {
-        width: auto;
-        box-sizing: border-box;
-        
-        label {
-            display: block;
-            padding-bottom: 0.4em;
-        }
-        
-        button.btn {
-            line-height: 24px;
-            font-size: 14px;
-            padding: 8px 14px;
-            display: inline-block;
-            cursor: pointer;
-            margin: 0;
-        }
-    }
-}
-
-.widget.ecomproductslist .productlist-filter .productlist-display-form .form-group {
-    padding: 10px 5px;
-    margin: 0;
-}
-
-.productlist-display-form .form-group {
-    padding: 10px;
-    margin: 0;
-    float: left;
-    
-    &:first-child {
-        padding-left: 0;
-    }
-    
-    &:last-child {
-        padding-right: 0;
-    }
-}
-
-.form-group.productlist-search {
-    position: relative;
-    
-    input[type="search"] {
-        display: inline-block;
-        padding-right: 0;
-        box-sizing: border-box;
-        margin-right: 0;
-    }
-    
-    button {
-        display: inline-block;
-        position: relative;
-        left: -3px;
-        vertical-align: top;
+    .ecom-productslist-product,
+	.ecom-featuredproducts-product {
+		display: block;
+		margin-top: 2em;
+		width: 100%/3;
+		margin: 0 0 30px;
+		margin-bottom: 30px;
+		padding: 0 10px;
+		overflow: auto;
+		
+		@media @tablet {
+			width: 100%/2;
+		}
+		
+		@media @mobile {
+		    padding: 0;
+			width: 100%;
+		}
+	
+		.responsivecolumns & {
+		    padding: 0;
+			width: 100%;
+		}
+	
+		.ecom-productslist-image-wrap,
+		.ecom-featuredproducts-image-wrap {
+			margin-bottom: 1em;
+			background-color: @color-swatch1;
+			background-position: center;
+	
+			@media @mobile {
+				background-image: none !important;
+				height: auto !important;
+	
+				img {
+					display: block !important;
+					max-width: 100%;
+				}
+			}
+		}
     }
 }
 
@@ -1126,23 +1165,6 @@ hr.line {
     }
 }
 
-.productlist-item-count {
-    clear: both;
-}
-
-@media (max-width: 768px) {
-    .productlist-display-form .form-group {
-        float: none;
-        width: 100%;
-        padding: 0;
-    }
-    
-    .form-group.productlist-search button {
-        margin-left: -4px;
-        width: 25%;
-    }
-}
-
 .widget.ecomproduct .ecom-product .ecom-product-preview-image-wrap {
     text-align: left;
 }
@@ -1150,7 +1172,7 @@ hr.line {
 .widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn {
     margin: 10px 0;
     float: left;
-    padding: 0 12px;
+    padding: 8px 12px;
     font-weight: 600;
 }
 
@@ -1246,7 +1268,7 @@ hr.line {
             }
             
             .basket-summary-quantitybtn {
-                margin: 5px 0 12px;
+                margin: 5px 8px 12px;
             }
             
             .quantity-number {
@@ -1273,7 +1295,7 @@ hr.line {
 .basket-summary-submit,
 .basket-summary-empty-cta {
     display: inline-block;
-    padding: 0 12px;
+    padding: 8px 12px;
     line-height: 45px;
     height: 45px;
     font-weight: @font-swatch7-font-weight;
