@@ -1843,6 +1843,8 @@ a.contentgroup__link {
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a,
 .widget.dropbox button {
+    display: inline-block;
+    line-height: 45px;
     padding: 0 24px 0 48px;
     text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
 }
@@ -1966,10 +1968,17 @@ button.blog-search-submit-button,
         margin: 10px 0;
 
         input {
-            width: 79%;
+            flex-grow: 1;
+            margin-right: 10px;
             
             @media @mobile {
                 width: 100%;
+                margin-right: 0;
+            }
+
+            .responsivecolumns & {
+                width: 100%;
+                margin-right: 0;
             }
         }
 
@@ -1982,6 +1991,11 @@ button.blog-search-submit-button,
             vertical-align: top;
             
             @media @mobile {
+                margin-top: 10px;
+                width: 100%;
+            }
+            
+            .responsivecolumns & {
                 margin-top: 10px;
                 width: 100%;
             }
