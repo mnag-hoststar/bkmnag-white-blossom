@@ -1,5 +1,7 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
+@mobile-small: ~"only screen and (max-width: 380px)";
+
 // Mixins
 
 .appearance(@appearance: none) {
@@ -702,7 +704,7 @@ footer {
         text-overflow: ellipsis;
 
         .language-selector--flag-text& {
-            @media only screen and (max-width: 380px) {
+            @media @mobile-small {
                 display: none;
             }
         }
