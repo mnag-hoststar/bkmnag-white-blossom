@@ -1400,6 +1400,8 @@ footer {
     }
 }
 
+// CLICK TO CALL
+
 .widget.clicktocall a {
     @media @mobile {
         background-color: @font-swatch7-background-color;
@@ -1619,7 +1621,25 @@ footer {
     }
 }
 
-// Line widget
+// BUTTON SPAN
+
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
+}
+
+// LINE
 
 hr.line {
     .style--light & {
