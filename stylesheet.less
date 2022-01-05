@@ -1385,7 +1385,8 @@ footer {
 .contactform button,
 .contactform button.btn,
 .advancedcontactform button,
-.advancedcontactform button.btn {
+.advancedcontactform button.btn,
+.userregistration fieldset .userregistrationbtn {
     padding: 0 24px;
     margin: 0;
     border: 0;
@@ -2279,6 +2280,42 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	label[for*="input--terms"] span a.form__link {
 		text-decoration: underline;
 		border: none;
+	}
+}
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
+		}
 	}
 }
 
