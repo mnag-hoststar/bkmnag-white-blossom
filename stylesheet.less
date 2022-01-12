@@ -1990,13 +1990,22 @@ hr.line {
     }
 }
 
+.basket-summary-continue-shopping,
 .basket-summary-submit,
 .basket-summary-empty-cta {
-    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
     padding: 8px 12px;
     line-height: 45px;
     height: 45px;
     font-weight: @font-swatch7-font-weight;
+
+    @media @mobile {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 // TWEET THIS
