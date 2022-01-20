@@ -2632,21 +2632,38 @@ button.blog-search-submit-button,
 // Gallery
 
 .widget.gallery {
-    ul li span.inner {
-        text-align: center;
-        
-        .title {
-            color: @color-swatch1;
-            font-weight: @font-swatch2-font-weight;
-            font-size: @font-swatch4-font-size;
-            padding-bottom: 10px;
-            border-bottom: 1px solid @color-swatch1;
-            margin: 70% 10px 10px;
-        }
-        
-        .description {
-            color: @color-swatch1;
-            margin-top: 10px;
+	ul li {
+		@media @tablet {
+			width: 50%;
+			padding-bottom: 50%;
+		}
+
+		@media @mobile {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+
+		.responsivecolumns & {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+	
+        span.inner {
+            text-align: center;
+            
+            .title {
+                color: @color-swatch1;
+                font-weight: @font-swatch2-font-weight;
+                font-size: @font-swatch4-font-size;
+                padding-bottom: 10px;
+                border-bottom: 1px solid @color-swatch1;
+                margin: 70% 10px 10px;
+            }
+            
+            .description {
+                color: @color-swatch1;
+                margin-top: 10px;
+            }
         }
     }
 
