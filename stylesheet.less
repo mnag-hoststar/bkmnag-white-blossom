@@ -285,6 +285,18 @@ blockquote {
         position: absolute;
         left: 10px;
         top: 18px;
+
+        .style--light & {
+            color: @color--accent;
+        }
+    
+        .style--accent & {
+            color: @contrast--accent;
+        }
+    
+        .style--dark & {
+            color: @color--accent;
+        }
     }
 }
 
