@@ -1096,6 +1096,22 @@ footer {
             margin: 0 auto;
         }
     }
+
+    // Mobile Menu
+    
+    a.pull {
+        display: block;
+        margin: 0 auto;
+        left: 0;
+        top: 0;
+        
+        &:after {
+            left: 0;
+            margin: 0 auto;
+        }
+    }
+
+    // Menu Points
     
     ul {
         width: 100%;
@@ -1104,20 +1120,21 @@ footer {
             padding-top: 0;
             margin-top: 20px;
         }
+
+        // Menu Point
         
         li {
             float: none;
             display: inline-block;
 
             @media @tablet {
+                padding: 0;
                 width: 100%;
                 text-align: center;
             }
-            
-            > ul {
-                @media @tablet {
-                    display: none !important;
-                }
+
+            &:hover {
+                color: @color-swatch3;
             }
 
             &:first-child {
@@ -1128,7 +1145,7 @@ footer {
             }
 
             a,
-            &.folder .text {
+            &.folder > .text {
                 display: block;
                 padding: 16px 30px;
                 margin: 0;
@@ -1149,34 +1166,59 @@ footer {
             &.folder:hover {
                 background-color: @font-swatch6-background-color-hover;
                 text-decoration: none;
-            }
-
-            &:hover,
-            &.selected a,
-            &.folder .text:hover {
                 color: @font-swatch6-color-hover;
             }
 
-            &:hover {
-                color: @color-swatch3;
+            // Folder
 
-                > ul {
-                    display: block;
+            &.folder {
+                &:after {
+                    content: none;
+                }
+					
+                > .text {
+                    // Folder Arrow
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 0.5em;
+                        border: 2px solid fade(@font-swatch6-color, 60%);
+                        border-top: transparent;
+                        border-left: transparent;
+                        transform: rotate(45deg);
+                        margin-top: -0.5em;
+                        width: 0.5em;
+                        height: 0.5em;
+                    }
+                
+                    &:hover:after {
+                        border-color: @font-swatch6-color-hover;
+                    }
+                }
+
+                // Dropdown
+
+                > ul,
+                &:hover > ul {
+                    display: none;
                     width: 186px;
                     position: absolute;
                     background-color: @font-swatch6-background-color;
                     z-index: 500;
                     margin-top: 0;
-                    
+
                     @media @tablet {
-                        display: block !important;
+                        display: none;
                         width: 100%;
                         padding: 0;
                         margin: 0;
                         border-top: 1px solid @color-swatch3;
                     }
     
-                    > li {
+                    li {
                         display: block;
                         width: 100%;
                         text-align: left;
@@ -1203,33 +1245,18 @@ footer {
                         }
                     }
                 }
-            }
-            
-            &.folder {
-                &:after {
-                    top: 46%;
-                    right: 10%;
+	
+                // Folder Open
+        
+                &.folder-open ul,
+                &.folder-open:hover ul {
+                    display: block;
+    
                     @media @tablet {
-                        right: 0;
+                        display: block;
                     }
                 }
             }
-            
-            @media @tablet {
-                padding: 0;
-            }
-        }
-    }
-    
-    a.pull {
-        display: block;
-        margin: 0 auto;
-        left: 0;
-        top: 0;
-        
-        &:after {
-            left: 0;
-            margin: 0 auto;
         }
     }
 }
