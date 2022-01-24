@@ -1402,25 +1402,32 @@ footer {
 
 // BUTTON
 
-.widget.button button,
-.contactform button,
-.contactform button.btn,
-.advancedcontactform button,
-.advancedcontactform button.btn,
-.userregistration fieldset .userregistrationbtn {
+.btn,
+button.btn,
+button.button,
+.widget.tweet a,
+.widget.dropbox button,
+.widget.profile form button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.clicktocall a,
+.widget.feature .feature-bgimg .content button,
+.userregistration fieldset .userregistrationbtn,
+.widget.socialicons span a,
+.widget.yelpreview .review-body .review-link a,
+.blog-post-more-link a,
+form.blog-search-form .form-group button {
+    border: 0;
     padding: 0 24px;
     margin: 0;
     border: 0;
+    min-height: 45px;
+    padding: 8px 14px;
+	background-color: @font-swatch7-background-color;
     font-family: @font-swatch7-font-family;
     font-size: @font-swatch7-font-size;
     font-weight: @font-swatch7-font-weight;
     line-height: @font-swatch7-line-height;
     letter-spacing: @font-swatch7-letter-spacing;
-    
-    &:hover {
-        cursor: pointer;
-    }
-}
 
 // CLICK TO CALL
 
