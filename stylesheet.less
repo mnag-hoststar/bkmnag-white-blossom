@@ -1428,64 +1428,82 @@ form.blog-search-form .form-group button {
     font-weight: @font-swatch7-font-weight;
     line-height: @font-swatch7-line-height;
     letter-spacing: @font-swatch7-letter-spacing;
+	color: @font-swatch7-color;
+    text-decoration: none;
+    text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
 
-// CLICK TO CALL
+	.style--light & {
+		background-color: @color--accent;
+		color: @contrast--accent;
+        text-shadow: 0 1px 1px fade(@color--accent, 20%);
+	}
 
-.widget.clicktocall a {
-    @media @mobile {
-        background-color: @font-swatch7-background-color;
-        color: @font-swatch7-color;
-        text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
-    }
+	.style--accent & {
+		background-color: @color--dark;
+		color: @contrast--dark;
+        text-shadow: 0 1px 1px fade(@color--dark, 20%);
+	}
 
-    .style--light & {
-        @media @mobile {
-            background-color: @color--accent;
-            color: @contrast--accent;
-            text-shadow: 0 1px 1px fade(@color--accent, 20%);
-        }
-    }
-
-    .style--accent & {
-        @media @mobile {
-            background-color: @color--dark;
-            color: @contrast--dark;
-            text-shadow: 0 1px 1px fade(@color--dark, 20%);
-        }
-    }
-
-    .style--dark & {
-        @media @mobile {
-            background-color: @color--accent;
-            color: @contrast--accent;
-            text-shadow: 0 1px 1px fade(@color--accent, 20%);
-        }
-    }
+	.style--dark & {
+		background-color: @color--accent;
+		color: @contrast--accent;
+        text-shadow: 0 1px 1px fade(@color--accent, 20%);
+	}
 
     &:hover {
-        @media @mobile {
-            background-color: @font-swatch7-background-color-hover;
-            .transition(all, 0.5s, ease);
-        }
-
+        background-color: @font-swatch7-background-color-hover;
+        .transition(all, 0.5s, ease);
+    
         .style--light & {
-            @media @mobile {
-                background-color: darken(@color--accent, 10%);
-            }
+            background-color: darken(@color--accent, 10%);
         }
-
+    
         .style--accent & {
-            @media @mobile {
-                background-color: darken(@color--dark, 10%);
-            }
+            background-color: darken(@color--dark, 10%);
         }
-
+    
         .style--dark & {
-            @media @mobile {
-                background-color: darken(@color--accent, 10%);
-            }
+            background-color: darken(@color--accent, 10%);
         }
     }
+}
+
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
+}
+
+// Image Buttons
+
+.widget.tweet a,
+.widget.dropbox button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.filedownload .btn,
+.widget.clicktocall a {
+	padding-left: 50px;
+	background-position: 18px center;
+
+	&:hover {
+		padding-left: 50px;
+		background-position: 18px center;
+	}
+}
+
+.widget.clicktocall a {
+	&, &:hover, &:focus {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
+	}
 }
 
 // TWITTER
@@ -2098,27 +2116,6 @@ hr.line {
         margin-right: 0;
         width: 100%;
         text-align: center;
-    }
-}
-
-// TWEET THIS
-
-.widget.tweet {
-    padding: 14px 0;
-
-    a {
-        background-image: image("/images/social/socialicons-twitter.png");
-        background-image: image("/images/social/socialicons-twitter.svg");
-        background-size: 22px;
-        background-position: 18px center;
-        background-repeat: no-repeat;
-        padding: 12px 24px 12px 48px;
-        margin: 1em 0;
-
-        &:hover,
-        &:active {
-            cursor: pointer;
-        }
     }
 }
 
