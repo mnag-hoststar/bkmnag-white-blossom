@@ -1518,12 +1518,33 @@ form.blog-search-form .form-group button {
         padding: 0;
     }
     
-    ul li a:hover {
-        text-decoration: none;
-    }
-    
-    li:last-child {
-        padding-bottom: 0;
+    ul {
+        .widget.profile & {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li {
+            .widget.profile & {
+                list-style: none;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+        
+            &:last-child {
+                padding-bottom: 0;
+            }
+                
+            img,
+            time,
+            span {
+                .widget.profile & {
+                    display: none;
+                }
+            }
+        }
     }
     
     // Tweet Content
@@ -1651,39 +1672,46 @@ form.blog-search-form .form-group button {
     }
 }
 
-// TWITTER
+// PLACEHOLDER
 
-.widget.profile ul.twitter {
-    padding: 0px;
-    margin: 0px;
+::-webkit-input-placeholder {
+    color: @color-swatch5;
 
-    li {
-        list-style: none;
-    }
-    
-    img,
-    time,
-    span {
-        display: none;
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
     }
 }
 
-// BUTTON SPAN
+:-moz-placeholder {
+    color: @color-swatch5;
 
-.widget button.btn span {
-	color: @font-swatch7-color;
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
+}
 
-	.style--light & {
-		color: @contrast--accent;
-	}
+::-moz-placeholder {
+    color: @color-swatch5;
 
-	.style--accent & {
-		color: @contrast--dark;
-	}
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
+}
 
-	.style--dark & {
-		color: @contrast--accent;
-	} 
+:-ms-input-placeholder {
+    color: @color-swatch5;
+
+    .style--light &,
+    .style--accent &,
+    .style--dark & {
+        color: fade(@contrast--light, 80%);
+    }
 }
 
 // LINE
@@ -2578,58 +2606,30 @@ button.blog-search-submit-button,
     display: inline-block;
 }
 
-.widget {
-    &.contactform {
-        input,
-        textarea {
-            &.email {
-                @media @mobile {
-                    width: 100%;
-                }
-            }
-        }
-
-        button.btn {
+.widget.contactform {
+    input,
+    textarea {
+        &.email {
             @media @mobile {
                 width: 100%;
             }
         }
     }
 
-    &.profile {
-        form {
-            button {
-                padding: 8px 12px;
-                vertical-align: top;
-                width: 20%;
-                text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
-                
-                @media @mobile {
-                    left: 0;
-                    margin-top: 10px;
-                    width: 100%;
-                }
-            }
-
-            fieldset input {
-                background: transparent;
-                border: 1px solid lighten(@color-swatch5, 12%);
-                width: 79%;
-                
-                @media @mobile {
-                    width: 100%;
-                }
-            }
+    button.btn {
+        @media @mobile {
+            width: 100%;
         }
     }
+}
 
-    &.signupform fieldset {
+.widget.profile {
+    form {
         button {
-            width: 20%;
             padding: 8px 12px;
-            position: relative;
             vertical-align: top;
-            padding: inherit;
+            width: 20%;
+            text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
             
             @media @mobile {
                 left: 0;
@@ -2638,61 +2638,81 @@ button.blog-search-submit-button,
             }
         }
 
-        input {
-            height: 45px;
+        fieldset input {
+            background: transparent;
+            border: 1px solid lighten(@color-swatch5, 12%);
             width: 79%;
             
-            @media @tablet {
-                width: 65%;
-            }
-            
             @media @mobile {
                 width: 100%;
             }
         }
     }
+}
 
-    &.blogsearch {
-        margin: 10px 0;
-
-        input {
-            flex-grow: 1;
-            margin-right: 10px;
-            
-            @media @mobile {
-                width: 100%;
-                margin-right: 0;
-            }
-
-            .responsivecolumns & {
-                width: 100%;
-                margin-right: 0;
-            }
-        }
-
-        button {
-            letter-spacing: inherit;
-            padding: 8px 12px;
-            text-decoration: none;
-            position: relative;
-            width: 20%;
-            vertical-align: top;
-            
-            @media @mobile {
-                margin-top: 10px;
-                width: 100%;
-            }
-            
-            .responsivecolumns & {
-                margin-top: 10px;
-                width: 100%;
-            }
+.widget.signupform fieldset {
+    button {
+        width: 20%;
+        padding: 8px 12px;
+        position: relative;
+        vertical-align: top;
+        padding: inherit;
+        
+        @media @mobile {
+            left: 0;
+            margin-top: 10px;
+            width: 100%;
         }
     }
 
-    &.button {
-        button.btn {
-            padding: 0 24px;
+    input {
+        height: 45px;
+        width: 79%;
+        
+        @media @tablet {
+            width: 65%;
+        }
+        
+        @media @mobile {
+            width: 100%;
+        }
+    }
+}
+
+.widget.blogsearch {
+    margin: 10px 0;
+
+    input {
+        flex-grow: 1;
+        margin-right: 10px;
+        
+        @media @mobile {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .responsivecolumns & {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    button {
+        letter-spacing: inherit;
+        padding: 8px 12px;
+        text-decoration: none;
+        position: relative;
+        width: 20%;
+        vertical-align: top;
+        
+        @media @mobile {
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        .responsivecolumns & {
+            margin-top: 10px;
+            width: 100%;
         }
     }
 }
