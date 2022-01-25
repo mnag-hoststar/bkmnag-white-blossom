@@ -2437,104 +2437,10 @@ select {
 	}
 }
 
-// Button
-
-button.btn,
-.widget.button button,
-.contactform button,
-.contactform button.btn,
-.signupform fieldset button,
-.signupform fieldset button.btn,
-.advancedcontactform button,
-.advancedcontactform button.btn,
-.widget.profile form button,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.dropbox button,
-.blog-search-submit-button,
-.blog-list-footer .paginate-older,
-.ecom-productslist-products .productlist-search .btn,
-.widget.ecomproduct .ecom-product .btn,
-.widget.ecomcheckout .checkout-order-button,
-.widget.ecombasket .ecombasket-pull,
-.widget.ecombasket .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link,
-.widget.ecombasketsummary .basket-summary-continue-shopping,
-.widget.ecombasketsummary .basket-summary-submit,
-.widget.feature .feature-bgimg .content button,
-.widget.tweet a,
-.widget.socialicons span a,
-.widget.clicktocall a,
-.blog-post-more-link a,
-.widget.ecomcategorieslist ul li a,
-.widget.yelpreview .review-body .review-link a,
-a.contentgroup__link {
-    background-color: @font-swatch7-background-color;
-    border: 0;
-    color: @font-swatch7-color;
-    font-family: @font-swatch7-font-family;
-    font-size: @font-swatch7-font-size;
-    font-weight: @font-swatch7-font-weight;
-    line-height: @font-swatch7-line-height;
-    letter-spacing: @font-swatch7-letter-spacing;
-    text-decoration: none;
-    text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
-    padding: 8px 14px;
-    min-height: 45px;
-
-    .style--light & {
-        background-color: @color--accent;
-        color: @contrast--accent;
-        text-shadow: 0 1px 1px fade(@color--accent, 20%);
-    }
-
-    .style--accent & {
-        background-color: @color--dark;
-        color: @contrast--dark;
-        text-shadow: 0 1px 1px fade(@color--dark, 20%);
-    }
-
-    .style--dark & {
-        background-color: @color--accent;
-        color: @contrast--accent;
-        text-shadow: 0 1px 1px fade(@color--accent, 20%);
-    }
-
-    &:hover {
-        background-color: @font-swatch7-background-color-hover;
-        .transition(all, 0.5s, ease);
-
-        .style--light & {
-            background-color: darken(@color--accent, 10%);
-        }
-
-        .style--accent & {
-            background-color: darken(@color--dark, 10%);
-        }
-
-        .style--dark & {
-            background-color: darken(@color--accent, 10%);
-        }
-    }
-}
-
-.widget.paypalbuynow .widget.button.paypal,
-.widget.tweet a,
-.widget.dropbox button {
-    display: inline-block;
-    line-height: 45px;
-    padding: 0 24px 0 48px;
-    text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
-}
-
 input.blog-search-input,
 .widget.signupform input,
 .widget.profile form fieldset input {
     margin-right: 0;
-}
-
-button.blog-search-submit-button,
-.widget.signupform button,
-.widget.profile button {
-    vertical-align: top;
 }
 
 .widget.paypalbuynow .widget.button.paypal,
