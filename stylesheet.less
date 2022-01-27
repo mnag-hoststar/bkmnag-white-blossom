@@ -2660,87 +2660,117 @@ input.blog-search-input,
         }
     }
     
-    .title {
+    .title,
+    .description {
         display: block;
     }
     
+    .title {
+        padding: 12px 20px 0 20px;
+        line-height: @font-swatch4-line-height;
+        font-family: @font-swatch4-font-family;
+        font-size: @font-swatch4-font-size;
+    }
+    
+    .description {
+        padding: 5px 20px 20px;
+    }
+
     .content-wrapper {
         background: rgba(0, 0, 0, 0.5);
     }
     
     .slideshow-widget {
-        
-        // Arrows
-        
-        .btn-prev,
-        .btn-next {
-            background-color: transparent;
-            background-size: contain;
-            width: 35px;
-            height: 35px;
-            font-size: 0;
-            z-index: 11;
-            text-indent: -99999px;
-            
-            @media @tablet {
-                width: 40px;
-                height: 40px;
-            }
-            
-            @media @mobile {
-                width: 30px;
-                height: 30px;
-            }
-        }
-        
-        .btn-prev {
-            background-image: image("/images/slideshow-arrow-left.png");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        .btn-next {
-            background-image: image("/images/slideshow-arrow-right.png");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        // Play Button
-        
-        .btn-play {
+        .btn-play,
+		.btn-prev,
+		.btn-next {
+			position: absolute;
+			opacity: 1;
+			top: 50%;
+			border: none;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
             background: rgba(0, 0, 0, 0.5);
-            top: 41%;
-            width: 50px;
-            height: 50px;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            
-            &:after {
-                top: 43%;
-                font-size: 20px;
-                color: @font-swatch7-color;
-                letter-spacing: -2px;
-                top: 2px;
-                line-height: 47px;
-            }
-            
-            @media @tablet {
-                width: 40px;
-                height: 40px;
-                &:after {
-                    line-height: 38px;
-                }
-            }
-            
-            @media @mobile {
-                width: 30px;
-                height: 30px;
-                &:after {
-                    line-height: 28px;
-                }
-            }
-        }
+			-webkit-transition: background-color 0.15s ease-in-out;
+			-moz-transition: background-color 0.15s ease-in-out;
+			-o-transition: background-color 0.15s ease-in-out;
+			transition: background-color 0.15s ease-in-out;
+	        border-radius: 50%;
+			font-size: 0;
+			line-height: 0;
+            color: @font-swatch1;
+
+			&:hover {
+                background: black;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				color: @font-swatch1;
+				background: transparent;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -5px;
+			}
+		}
+
+		.btn-play {
+    		left: 50%;
+			margin-left: -25px;
+
+			&:after,
+			&.pause:after {
+				height: 0;
+				width: 0;
+				border: 10px solid transparent;
+				border-left: 15px solid @color-swatch1;
+			}
+
+			&.pause:after {
+                height: 18px;
+                width: 5px;
+                margin-top: -9px;
+                margin-left: -4px;
+                border: none;
+				border-left: 2px solid @color-swatch1;
+				border-right: 2px solid @color-swatch1;
+			}
+		}
+
+		.btn-prev,
+		.btn-next {
+			&:after {
+				border: 2px solid @color-swatch1;
+				transform: rotate(45deg);
+				margin-top: -7px;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+				width: 12px;
+				height: 12px;
+			}
+		}
+
+		.btn-prev {
+			&:after {
+				border-top: transparent;
+				border-right: transparent;
+				margin-left: -4px;
+				left: 50%;
+			}
+		}
+
+		.btn-next {
+			&:after {
+				border-bottom: transparent;
+				border-left: transparent;
+				margin-right: -4px;
+				right: 50%;
+			}
+		}
     }
     
     .slideshow-widget-controls {
