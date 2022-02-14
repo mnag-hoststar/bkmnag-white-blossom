@@ -1,7 +1,7 @@
 {
 	"name":"White Blossom",
-	"thumbnail":"thumbnail.png",
-	"screenshot":"whiteblossom-screenshot.jpg",
+	"thumbnail":"images/thumbnail.png",
+	"screenshot":"images/screenshot.jpg",
 	"templateType":"standard",
     "versionTenCompatible": 1,
     "pageTypes": ["home"],
