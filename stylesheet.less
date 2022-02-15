@@ -10,6 +10,27 @@
     appearance: @appearance;
 }
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+}
+
 // TEMPLATE STYLES
 
 body {
@@ -2291,15 +2312,18 @@ textarea {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @mobile {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 }
 
 select {
@@ -2981,85 +3005,6 @@ input.blog-search-input,
             letter-spacing: @font-swatch4-letter-spacing;
             width: 100%;
         }
-    }
-}
-
-// MENU
-
-.widget.menu {
-    margin: 20px 0;
-    
-    h4,
-    .menu-item-nutritional-prop {
-        font-size: @font-swatch5-font-size;
-    }
-    
-    .menu-header {
-        text-align: center;
-    }
-    
-    .menu-items {
-        li {
-            display: block;
-            padding: 20px 0;
-            
-            .inner-item {
-                display: block;
-                padding: 0;
-                margin: 0;
-            }
-            
-            &.menu-item-promoted {
-                padding: 30px;
-                border: 1px solid darken(@color-swatch2, 5%);
-            }
-        }
-        
-        .menu-item-image-wrap {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            clear: both;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-            img {
-                display: none;
-            }
-        }
-    }
-    
-    .menu-item-price {
-        padding: 10px 0;
-        
-        p {
-            padding: 0;
-        }
-    }
-
-    .menu-section-item-dietary-props {
-        .dietary-icon {
-            background-color: @color-swatch3;
-            text-transform: uppercase;
-            font-size: bkscale(@font-swatch5-font-size, 0.8);
-            color: @color-swatch1;
-            padding: 0px 10px;
-        }
-    }
-    
-    // Menu Subsection
-    
-    .menu-subsection {
-        padding: 0;
-        margin: 0;
-    }
-    
-    .wrapper {
-        width: 100%;
-        margin: 0;
     }
 }
 
