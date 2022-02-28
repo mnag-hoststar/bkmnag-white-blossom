@@ -115,7 +115,7 @@
             "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
             "font-size": "16px",
             "font-weight": "inherit",
-            "line-height": "26px",
+            "line-height": "28px",
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch3",
