@@ -2343,13 +2343,13 @@ select {
 
     .style--accent & {
         background-color: @color--light;
-        border-color: darken(@color--accent, 10%);
+        border-color: darken(@color--dark, 10%);
         color: @contrast--light;
     }
 
     .style--dark & {
         background-color: @color--light;
-        border-color: darken(@color--dark, 10%);
+        border-color: darken(@color--dark, 40%);
         color: @contrast--light;
     }
     
@@ -2367,11 +2367,11 @@ select {
         }
 
         .style--accent & {
-            border-color: darken(@color--accent, 20%) !important;
+            border-color: darken(@color--dark, 20%) !important;
         }
 
         .style--dark & {
-            border-color: darken(@color--dark, 20%) !important;
+            border-color: darken(@color--dark, 60%) !important;
         }
     }
 }
