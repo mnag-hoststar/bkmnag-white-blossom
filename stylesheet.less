@@ -329,7 +329,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -811,13 +811,13 @@ footer {
 
     .language-selector.language-selector--dropdown & {
         &:before {
-            content: "";
+            content: '';
             display: block;
             height: @language-line-height;
         }
 
         &:after {
-            content: "";
+            content: '';
             display: block;
             height: @language-padding*2;
         }
@@ -940,7 +940,7 @@ footer {
         &:before {
             .language-selector.language-selector--dropdown & {
                 position: absolute;
-                content: "\25be";
+                content: '\25be';
                 top: 50%;
                 right: -1px;
                 margin-top: -(@language-line-height / 4);
@@ -956,7 +956,7 @@ footer {
         &:after {
             .language-selector.language-selector--dropdown & {
                 position: absolute;
-                content: "\25be";
+                content: '\25be';
                 top: 50%;
                 right: 0;
                 margin-top: -(@language-line-height / 4);
@@ -1418,7 +1418,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -1532,7 +1532,7 @@ form.blog-search-form .form-group button,
 // Social Icons
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
 	span {
 		display: inline-block;
 		
@@ -1569,7 +1569,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	}
 }
 
-footer.bk-footer .widget.profile .bk-profile-socialicons span a {
+.widget.profile .bk-profile-socialicons span a {
 	color: darken(@font-swatch7-color, 10%);
 	background-color: fade(@color-swatch3, 90%);
 
@@ -1956,7 +1956,7 @@ hr.line {
                     padding: 10px 0 5px;
     
                     &:after {
-                        content: ":";
+                        content: ':\00a0';
                         display: inline-block;
                         position: relative;
                     }
@@ -2131,6 +2131,32 @@ hr.line {
 			}
 		}
 	}
+
+	.ecom-product-tag,
+	.ecom-product-category {
+		display: flex;
+		flex-wrap: wrap;
+
+		&:after {
+			content: ':\00a0';
+			order: 0;
+			display: inline-block;
+		}
+	}
+
+    .store-category-link,
+    .ecom-product-tag-link {
+        font-weight: 300;
+        order: 1;
+
+        &:after {
+            content: ',\00a0';
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+    }
 }
 
 // Basket Summary
@@ -2485,7 +2511,7 @@ select {
 		&:after {
 			cursor: pointer;
 			display: block;
-			content: " ";
+			content: ' ';
 			position: absolute;
 			top: 0;
 			left: 0;
