@@ -164,7 +164,6 @@ p,
 ul, ol, li,
 dd, pre, code,
 label, .label,
-.contentgroup__body,
 .contactform label, 
 .advancedcontactform label,
 .widget.twitter .twitter-content p,
@@ -369,7 +368,6 @@ blockquote {
 
 table {
 	overflow: auto;
-	width: 100%;
     max-width: 100%;
 	border: none;
 	border-collapse: separate;
@@ -462,12 +460,16 @@ td {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+        width: 100% !important;
+        max-width: 100%;
 	}
 	
 	.responsivecolumns & {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+        width: 100% !important;
+        max-width: 100%;
 	}
 	
 	&:first-child {
@@ -1247,6 +1249,11 @@ footer {
                                 padding-top: 0;
                             }
                         }
+
+                        a .text {
+                            overflow: visible;
+                            word-break: break-word;
+                        }
                     }
                 }
 	
@@ -1430,6 +1437,7 @@ form.blog-search-form .form-group button,
     margin: 0;
     border: 0;
     min-height: 45px;
+	height: auto !important;
     padding: 8px 14px;
 	background-color: @font-swatch7-background-color;
     font-family: @font-swatch7-font-family;
@@ -1440,6 +1448,7 @@ form.blog-search-form .form-group button,
 	color: @font-swatch7-color;
     text-decoration: none;
     text-shadow: 0 1px 1px fade(@color-swatch7, 20%);
+    text-align: center;
 
 	.style--light & {
 		background-color: @font-swatch7-background-color;
@@ -1527,6 +1536,17 @@ form.blog-search-form .form-group button,
 	padding-left: 3.2em;
     background-size: 1.2em;
     background-position: 1.25em center;
+}
+
+.widget.filedownload div {
+	@media @mobile {
+		float: none;
+	}
+
+	span.file-name {
+		display: block;
+		margin: 0.5em 0;
+	}
 }
 
 // Social Icons
@@ -2030,7 +2050,9 @@ hr.line {
 // Product Item
 
 .widget.ecomproductslist .ecom-productslist-product,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-product {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap.products-2 .ecom-featuredproducts-product {
     display: block;
     margin-top: 2em;
     width: 100%/3;
@@ -2132,29 +2154,31 @@ hr.line {
 		}
 	}
 
-	.ecom-product-tag,
-	.ecom-product-category {
-		display: flex;
-		flex-wrap: wrap;
+    .ecom-product-cattag {
+        .ecom-product-tag,
+        .ecom-product-category {
+            display: flex;
+            flex-wrap: wrap;
 
-		&:after {
-			content: ':\00a0';
-			order: 0;
-			display: inline-block;
-		}
-	}
-
-    .store-category-link,
-    .ecom-product-tag-link {
-        font-weight: 300;
-        order: 1;
-
-        &:after {
-            content: ',\00a0';
+            &:after {
+                content: ':\00a0';
+                order: 0;
+                display: inline-block;
+            }
         }
 
-        &:last-child::after {
-            content: none;
+        .store-category-link,
+        .ecom-product-tag-link {
+            font-weight: 300;
+            order: 1;
+
+            &:after {
+                content: ',\00a0';
+            }
+
+            &:last-child::after {
+                content: none;
+            }
         }
     }
 }
@@ -2523,6 +2547,7 @@ select {
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
 			border: 1px solid @font-swatch7-background-color;
+            border-radius: 0;
 
 			.style--light & {
 				border-color: @font-swatch7-background-color;
@@ -2871,25 +2896,25 @@ form.blog-search-form .form-group {
             height: 280px;
         }
     }
-    
-    .title,
-    .description {
-        display: block;
-    }
-    
-    .title {
-        padding: 12px 20px 0 20px;
-        line-height: @font-swatch4-line-height;
-        font-family: @font-swatch4-font-family;
-        font-size: @font-swatch4-font-size;
-    }
-    
-    .description {
-        padding: 5px 20px 20px;
-    }
 
     .content-wrapper {
         background: rgba(0, 0, 0, 0.5);
+    
+        .title,
+        .description {
+            display: block;
+        }
+        
+        .title {
+            padding: 12px 20px 0 20px;
+            line-height: @font-swatch4-line-height;
+            font-family: @font-swatch4-font-family;
+            font-size: @font-swatch4-font-size;
+        }
+        
+        .description {
+            padding: 5px 20px 20px;
+        }
     }
     
     .slideshow-widget {
