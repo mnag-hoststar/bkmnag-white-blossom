@@ -309,6 +309,10 @@ blockquote {
             color: @color--accent;
         }
     }
+
+	&:after {
+		display: none;
+	}
 }
 
 // Unordered and Ordered List
@@ -1225,14 +1229,20 @@ footer {
                 > ul,
                 &:hover > ul {
                     display: none;
-                    width: 186px;
                     position: absolute;
+                    left: auto;
+                    right: 0;
+                    min-width: 180px;
+                    max-width: 400px;
                     background-color: @font-swatch6-background-color;
                     z-index: 500;
                     margin-top: 0;
 
                     @media @tablet {
                         display: none;
+                        position: static;
+                        min-width: auto;
+                        max-width: none;
                         width: 100%;
                         padding: 0;
                         margin: 0;
@@ -1421,6 +1431,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1437,7 +1448,7 @@ form.blog-search-form .form-group button,
     margin: 0;
     border: 0;
     min-height: 45px;
-	height: auto !important;
+	height: auto;
     padding: 8px 14px;
 	background-color: @font-swatch7-background-color;
     font-family: @font-swatch7-font-family;
@@ -1557,15 +1568,14 @@ form.blog-search-form .form-group button,
 		display: inline-block;
 		
 		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: inline-block;
 			background-image: none;
 			margin: 0 5px 10px;
 			padding: 0;
 			width: 45px;
 			height: 45px;
 			min-height: 45px;
+			line-height: 45px;
 			border-radius: 50%;
 			text-indent: 0;
 			font-size: 0;
@@ -2382,7 +2392,8 @@ select {
     -webkit-border-radius: 0;
     border-radius: 0;
     padding: 0 12px;
-    height: 45px;
+    min-height: 45px;
+	height: auto !important;
     line-height: 45px;
     color: @font-swatch5-color;
 
@@ -2434,7 +2445,7 @@ input {
 }
 
 textarea {
-    height: auto;
+    min-height: 100px;
 }
 
 // Dropdown
@@ -3011,6 +3022,8 @@ form.blog-search-form .form-group {
     }
     
     .slideshow-widget-controls {
+		margin-bottom: 20px;
+        
         .dot {
             width: 10px;
             height: 10px;
