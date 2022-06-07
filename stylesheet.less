@@ -1881,12 +1881,11 @@ hr.line {
 
 .widget.ecomcategorieslist {
 	ul.product-category-items {
-		list-style: none;
-		padding: 0 10px;
-		margin: 0 auto 1em;
 		display: flex;
-		max-width: 800px;
 		flex-wrap: wrap;
+		margin: 0 0 1em;
+		padding: 0;
+		list-style: none;
 
 		@media @mobile {
 			padding: 0;
@@ -1898,7 +1897,7 @@ hr.line {
 
 		li {
 			width: 100%/3;
-			padding: 5px 10px;
+			padding: 5px 20px 5px 0;
 
 			@media @tablet {
 				width: 100%/2;
@@ -1966,6 +1965,7 @@ hr.line {
             .form-group {
                 display: block;
                 width: 100%/3;
+				flex-grow: 1;
                 margin: 0;
                 padding: 0 10px 10px;
                 box-sizing: border-box;
