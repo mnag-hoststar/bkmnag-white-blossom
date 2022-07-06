@@ -1878,9 +1878,11 @@ a.blog-back-home {
 
 // LINE
 
-hr.line {
-    background-color: darken(@font-swatch5-color, 15%);
-
+hr.line,
+.content hr {
+    height: 1px;
+    background-color: fade(@font-swatch5-color, 15%);
+    
     .style--light & {
         background-color: darken(@font-swatch5-color, 15%);
     }
